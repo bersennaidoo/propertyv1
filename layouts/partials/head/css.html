@@ -1,0 +1,23 @@
+<link rel="preconnect" href="https://app.snipcart.com" />
+<link rel="preconnect" href="https://cdn.snipcart.com" />
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css" />
+
+<link rel="stylesheet" href="/fonts/icomoon/style.css" />
+<link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css" />
+
+<link rel="stylesheet" href="/css/tiny-slider.css" />
+<link rel="stylesheet" href="/css/aos.css" />
+
+{{- with resources.Get "scss/bootstrap-custom.scss" | toCSS }}
+  {{- if eq hugo.Environment "development" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+
+
+
